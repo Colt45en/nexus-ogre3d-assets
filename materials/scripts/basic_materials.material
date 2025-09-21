@@ -1,0 +1,79 @@
+// Basic material script for OGRE 3D
+// Demonstrates a simple diffuse material with texture
+
+material BasicDiffuseMaterial
+{
+    technique
+    {
+        pass
+        {
+            lighting on
+            ambient 0.3 0.3 0.3 1.0
+            diffuse 1.0 1.0 1.0 1.0
+            specular 0.1 0.1 0.1 1.0 12.5
+            
+            texture_unit
+            {
+                texture rock_diffuse.jpg
+                tex_coord_set 0
+                filtering trilinear
+            }
+        }
+    }
+}
+
+material TerrainMaterial
+{
+    technique
+    {
+        pass
+        {
+            lighting on
+            
+            texture_unit base_texture
+            {
+                texture grass_texture.jpg
+                tex_coord_set 0
+            }
+            
+            texture_unit detail_texture
+            {
+                texture rock_detail.jpg
+                tex_coord_set 0
+                scale 16.0 16.0
+                colour_op_ex blend_current_alpha src_texture src_current
+            }
+        }
+    }
+}
+
+material WaterMaterial
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            scene_blend alpha_blend
+            depth_write off
+            
+            vertex_program_ref water_vs
+            {
+                param_named_auto worldViewProj worldviewproj_matrix
+                param_named_auto time time_0_1 1
+            }
+            
+            fragment_program_ref water_ps
+            {
+                param_named waterColor float4 0.1 0.4 0.7 0.6
+            }
+            
+            texture_unit
+            {
+                texture water_normal.jpg
+                tex_coord_set 0
+                scroll_anim 0.1 0.0
+            }
+        }
+    }
+}

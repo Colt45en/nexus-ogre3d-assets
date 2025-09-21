@@ -1,0 +1,69 @@
+# Build artifacts
+*.o
+*.obj
+*.lib
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+
+# IDE and Editor files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-*
+
+# Cache and temporary files
+*.cache
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+
+# Log files
+*.log
+
+# Compiled shader bytecode
+*.cso
+*.fxo
+
+# OGRE specific
+*.cfg.bak
+OgreDebug.log
+Ogre.log
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Build directories
+build/
+bin/
+lib/
+debug/
+release/
+Debug/
+Release/
+
+# Package manager
+node_modules/
+package-lock.json
+*.tgz
+
+# System files
+desktop.ini
+.directory

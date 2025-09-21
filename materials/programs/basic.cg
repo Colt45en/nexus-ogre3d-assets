@@ -1,0 +1,21 @@
+// Cg Vertex Program for basic diffuse lighting
+// Example shader for OGRE 3D assets
+
+void basic_vs(
+    float4 position : POSITION,
+    float3 normal : NORMAL,
+    float2 texcoord : TEXCOORD0,
+    
+    out float4 oPosition : POSITION,
+    out float3 oNormal : TEXCOORD0,
+    out float2 oTexcoord : TEXCOORD1,
+    out float3 oWorldPos : TEXCOORD2,
+    
+    uniform float4x4 worldViewProj,
+    uniform float4x4 world)
+{
+    oPosition = mul(worldViewProj, position);
+    oNormal = normalize(mul((float3x3)world, normal));
+    oTexcoord = texcoord;
+    oWorldPos = mul(world, position).xyz;
+}
