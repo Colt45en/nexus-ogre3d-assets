@@ -1,0 +1,195 @@
+# =============================================================================
+# OGRE 3D Asset Repository - .gitignore
+# =============================================================================
+
+# Build artifacts
+build/
+dist/
+bin/
+lib/
+obj/
+out/
+
+# Compiled Object files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.lib
+*.a
+
+# Executables
+*.exe
+*.app
+
+# Debug files
+*.pdb
+*.dSYM/
+*.su
+*.idb
+
+# =============================================================================
+# OGRE 3D Specific
+# =============================================================================
+
+# OGRE cache files
+*.cache
+Ogre.log*
+ogre.cfg
+
+# Compiled OGRE resources
+*.mesh.xml.bak
+*.skeleton.xml.bak
+
+# OGRE shader cache
+*.fxcache
+*.pcache
+
+# =============================================================================
+# Texture and Asset Processing
+# =============================================================================
+
+# Temporary image files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Photoshop files
+*.psd
+*.psb
+
+# 3D modeling temporary files
+*.max.bak
+*.ma.swatches
+*.mb.tmp
+*.blend1
+*.blend2
+
+# Texture compression artifacts
+*.tga~
+*.dds~
+
+# =============================================================================
+# Development Environment
+# =============================================================================
+
+# IDE files
+.vscode/
+.idea/
+*.vcxproj.user
+*.vcxproj.filters
+*.sln.docstates
+*.suo
+*.user
+
+# Visual Studio
+.vs/
+Debug/
+Release/
+x64/
+Win32/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# =============================================================================
+# Operating System
+# =============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# =============================================================================
+# Archive and Compression
+# =============================================================================
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# =============================================================================
+# Logs and Runtime
+# =============================================================================
+
+*.log
+*.log.*
+logs/
+crash.dmp
+core
+
+# =============================================================================
+# Package Managers
+# =============================================================================
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# =============================================================================
+# Version Control
+# =============================================================================
+
+# Git
+*.orig
+*.rej
+
+# Subversion
+.svn/
+
+# =============================================================================
+# Documentation
+# =============================================================================
+
+# Generated documentation
+docs/_build/
+site/
+htmlcov/
+
+# =============================================================================
+# Custom Asset Processing
+# =============================================================================
+
+# Temporary asset processing directories
+/temp_assets/
+/processing/
+/converted/
+/optimized/
+
+# Asset conversion logs
+asset_conversion.log
+texture_optimization.log
+mesh_optimization.log
