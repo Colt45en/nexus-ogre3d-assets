@@ -1,0 +1,116 @@
+// Example OGRE material script for Orc Warrior character
+// This demonstrates the material definition format for OGRE 3D
+
+material character_orc_warrior
+{
+    technique
+    {
+        pass
+        {
+            // Ambient lighting contribution
+            ambient 0.3 0.3 0.3 1.0
+            
+            // Diffuse lighting contribution
+            diffuse 0.8 0.8 0.8 1.0
+            
+            // Specular highlighting
+            specular 0.5 0.5 0.5 1.0 32
+            
+            // Diffuse texture unit
+            texture_unit diffuse_map
+            {
+                texture orc_warrior_diffuse.png
+                tex_coord_set 0
+                colour_op modulate
+            }
+            
+            // Normal mapping for surface detail
+            texture_unit normal_map
+            {
+                texture orc_warrior_normal.png
+                tex_coord_set 0
+                colour_op_ex dotproduct diffuse_map src_texture
+            }
+            
+            // Specular map for varied shininess
+            texture_unit specular_map
+            {
+                texture orc_warrior_specular.png
+                tex_coord_set 0
+                colour_op modulate
+            }
+        }
+    }
+    
+    // Simplified technique for older hardware
+    technique low_quality
+    {
+        pass
+        {
+            ambient 0.3 0.3 0.3 1.0
+            diffuse 0.8 0.8 0.8 1.0
+            
+            texture_unit
+            {
+                texture orc_warrior_diffuse.png
+                tex_coord_set 0
+            }
+        }
+    }
+}
+
+// Material for orc warrior armor
+material armor_orc_warrior_steel
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.2 0.2 0.2 1.0
+            diffuse 0.6 0.6 0.6 1.0
+            specular 0.9 0.9 0.9 1.0 64
+            
+            texture_unit
+            {
+                texture armor_steel_diffuse.png
+                tex_coord_set 0
+            }
+            
+            texture_unit
+            {
+                texture armor_steel_normal.png
+                tex_coord_set 0
+                colour_op_ex dotproduct diffuse_map src_texture
+            }
+        }
+    }
+}
+
+// Environment material example
+material environment_stone_wall
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.4 0.4 0.4 1.0
+            diffuse 0.8 0.8 0.8 1.0
+            specular 0.1 0.1 0.1 1.0 8
+            
+            texture_unit
+            {
+                texture stone_wall_diffuse_weathered.png
+                tex_coord_set 0
+                // Enable texture tiling for large surfaces
+                tex_address_mode wrap
+            }
+            
+            texture_unit
+            {
+                texture stone_wall_normal.png
+                tex_coord_set 0
+                colour_op_ex dotproduct diffuse_map src_texture
+            }
+        }
+    }
+}
