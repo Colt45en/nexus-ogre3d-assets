@@ -1,0 +1,14 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datadir=${prefix}/share/nexus-ogre3d-assets
+
+Name: nexus-ogre3d-assets
+Description: OGRE 3D asset library with materials, shaders, models, and Bullet physics integration
+Version: 1.0.0
+URL: https://github.com/Colt45en/nexus-ogre3d-assets
+Requires: OGRE >= 1.10.0
+Requires.private: bullet >= 2.80
+Cflags: -I${includedir} -I${datadir}/bullet
+Libs: -L${libdir}
